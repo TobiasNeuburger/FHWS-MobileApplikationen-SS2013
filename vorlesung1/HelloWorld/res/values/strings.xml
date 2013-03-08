@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">First App</string>
-    <string name="greeting">Please type in your name</string>
+    <string name="greeting">Please type in your full name</string>
     <string name="inputUsernameHint">Firstname Lastname</string>
     <string name="okButton">OK</string>
     <string name="action_about">About</string>
