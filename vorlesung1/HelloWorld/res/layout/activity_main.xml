@@ -21,8 +21,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:digits="01"
         android:hint="@string/inputUsernameHint"
-        android:inputType="textPersonName|textCapWords" >
+        android:inputType="number" >
 
         <requestFocus />
     </EditText>
