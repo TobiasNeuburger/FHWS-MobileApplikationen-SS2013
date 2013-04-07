@@ -22,6 +22,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="de.fhws.mobileapps.vorlesung3.layouts.FrameActivity"
+            android:label="@string/title_activity_frame" >
+        </activity>
+        <activity
+            android:name="de.fhws.mobileapps.vorlesung3.layouts.SpinnerActivity"
+            android:label="@string/title_activity_spinner" >
+        </activity>
+        <activity
+            android:name="de.fhws.mobileapps.vorlesung3.layouts.DatePickerActivity"
+            android:label="@string/title_activity_date_picker" >
+        </activity>
+        <activity
+            android:name="de.fhws.mobileapps.vorlesung3.layouts.ToastDialogActivity"
+            android:label="@string/title_activity_toast_dialog" >
+        </activity>
     </application>
 
 </manifest>
