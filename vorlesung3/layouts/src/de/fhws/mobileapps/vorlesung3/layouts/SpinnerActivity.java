@@ -25,7 +25,7 @@ public class SpinnerActivity extends Activity implements OnItemSelectedListener 
 		setContentView(R.layout.activity_spinner);
 		
 		Spinner spinner = (Spinner)findViewById(R.id.spinner1);
-		List<String> values = new LinkedList<String>( Arrays.asList( "Januar", "Februar", "MŠrz", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember" ) );
+		List<String> values = Arrays.asList( "Januar", "Februar", "MŠrz", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember" );
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, values );
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinner.setOnItemSelectedListener(this);

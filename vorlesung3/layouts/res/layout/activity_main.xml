@@ -100,25 +100,23 @@
             android:text="RadioButton" />
     </RadioGroup>
 
-    <View
+    <LinearLayout
         android:id="@+id/view1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/button1"
         android:layout_below="@id/radioGroup1"
         android:background="#b0b0b0" >
-    </View>
 
     <EditText
         android:id="@+id/editText1"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/view1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="10dp"
         android:ems="10" >
 
         <requestFocus />
     </EditText>
+    </LinearLayout>
 
 </RelativeLayout>
