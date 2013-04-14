@@ -62,16 +62,15 @@ public class MainActivity extends Activity {
 				.setText("First tab")
 				.setIcon( R.drawable.action_help )
 				.setTabListener(
-						new MyTabListener<Fragment1>(this, "artist",
-								Fragment1.class));
+						new MyTabListener( new Fragment1()));
+		
 		actionBar.addTab(tab);
 
 		tab = actionBar
 				.newTab()
 				.setText("Second Tab")
 				.setTabListener(
-						new MyTabListener<Fragment2>(this, "album",
-								Fragment2.class));
+						new MyTabListener(new Fragment2()));
 		actionBar.addTab(tab);
 
 //		ToggleButton tb = (ToggleButton) findViewById(R.id.toggleButton1);
@@ -110,38 +109,20 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
-	public static class MyTabListener<T extends Fragment> implements
+	public static class MyTabListener implements
 			TabListener {
-		private Fragment mFragment;
-		private final Activity mActivity;
-		private final String mTag;
-		private final Class<T> mClass;
+		private Fragment fragment;
 
-		public MyTabListener(Activity activity, String tag, Class<T> clz) {
-			mActivity = activity;
-			mTag = tag;
-			mClass = clz;
+		public MyTabListener(Fragment fragment) {
+			this.fragment = fragment;
 		}
 
-		/* The following are each of the ActionBar.TabListener callbacks */
-
 		public void onTabSelected(Tab tab, FragmentTransaction ft) {
-			// Check if the fragment is already initialized
-			if (mFragment == null) {
-				// If not, instantiate and add it to the activity
-				mFragment = Fragment.instantiate(mActivity, mClass.getName());
-				ft.add(android.R.id.content, mFragment, mTag);
-			} else {
-				ft.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out);
-				ft.attach(mFragment);
-			}
+			ft.replace( R.id.fragment_container, fragment );
 		}
 
 		public void onTabUnselected(Tab tab, FragmentTransaction ft) {
-			if (mFragment != null) {
-				ft.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out);
-				ft.detach(mFragment);
-			}
+			ft.remove( fragment );
 		}
 
 		public void onTabReselected(Tab tab, FragmentTransaction ft) {
