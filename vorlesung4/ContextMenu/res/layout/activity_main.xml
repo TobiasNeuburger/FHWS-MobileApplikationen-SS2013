@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -14,6 +15,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/button1"
+        android:background="#00000000"
+        android:cacheColorHint="#00000000"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true" >
     </ListView>
@@ -26,4 +29,11 @@
         android:layout_alignParentTop="true"
         android:text="Button" />
     
+    
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/button1"
+        android:text="Button2" />
 </RelativeLayout>

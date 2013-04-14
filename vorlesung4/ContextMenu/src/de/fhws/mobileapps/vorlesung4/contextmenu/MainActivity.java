@@ -32,17 +32,30 @@ public class MainActivity extends ListActivity {
 		
 		Button b = (Button)findViewById(R.id.button1);
 		ListView l = (ListView)findViewById(android.R.id.list);
-//		registerForContextMenu(b);
+		l.setDivider(getResources().getDrawable(R.drawable.transperent_color));
+		l.setDividerHeight(50);
+		registerForContextMenu(b);
 		
-		gestureDetector = new GestureDetector(this, new MyGestureDetector());
-        gestureListener = new View.OnTouchListener() {
-            public boolean onTouch(View v, MotionEvent event) {
-                return gestureDetector.onTouchEvent(event);
-            }
-        };
-        
-        b.setOnTouchListener(gestureListener);
-        l.setOnTouchListener(gestureListener);
+		Button b2 = (Button)findViewById(R.id.button2);
+		b2.setOnLongClickListener( new View.OnLongClickListener() {
+			
+			@Override
+			public boolean onLongClick(View v) {
+				Button b = (Button)v;
+				b.setText("Press");
+				return false;
+			}
+		});
+		
+//		gestureDetector = new GestureDetector(this, new MyGestureDetector());
+//        gestureListener = new View.OnTouchListener() {
+//            public boolean onTouch(View v, MotionEvent event) {
+//                return gestureDetector.onTouchEvent(event);
+//            }
+//        };
+//        
+//        b.setOnTouchListener(gestureListener);
+//        l.setOnTouchListener(gestureListener);
 	}
 	
 	@Override
