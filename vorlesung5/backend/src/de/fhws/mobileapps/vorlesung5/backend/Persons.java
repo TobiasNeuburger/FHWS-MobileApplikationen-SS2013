@@ -47,17 +47,6 @@ public class Persons extends HttpServlet {
 			{}
 			
 			
-			Genson genson = new Genson();
-			
-			try
-			{
-				System.out.println(genson.serialize(allPersons));
-			}
-			catch( Exception e )
-			{
-				e.printStackTrace();
-			}
-			
 			for (Person p : allPersons) {
 				response.getWriter().println(p.toString());
 			}
