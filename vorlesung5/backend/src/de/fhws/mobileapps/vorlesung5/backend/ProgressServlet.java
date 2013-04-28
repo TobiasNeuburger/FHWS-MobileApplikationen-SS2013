@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/progress")
 public class ProgressServlet extends HttpServlet 
 {
-
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
