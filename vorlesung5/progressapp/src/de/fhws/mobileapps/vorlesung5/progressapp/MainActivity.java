@@ -24,6 +24,8 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
+	private static final String HOST = "backend.applab.fhws.de";
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -60,7 +62,7 @@ public class MainActivity extends Activity {
 			nameValuePairs.add(new BasicNameValuePair("size", Integer.toString(100)));
 			nameValuePairs.add(new BasicNameValuePair("pause", Integer.toString(10)));
 			
-			HttpGet get = new HttpGet("http://192.168.2.187:8080/fhws/progress?" + URLEncodedUtils.format(nameValuePairs, "UTF-8"));
+			HttpGet get = new HttpGet("http://" + HOST + ":8080/fhws/progress?" + URLEncodedUtils.format(nameValuePairs, "UTF-8"));
 			
 			int size = 0;
 			

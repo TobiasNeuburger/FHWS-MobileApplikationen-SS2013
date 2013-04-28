@@ -36,6 +36,14 @@ public class Persons extends HttpServlet {
 		if (idAsString == null) {
 			Collection<Person> allPersons = PersonContainer.getInstance()
 					.values();
+			
+			try
+			{
+				Thread.sleep( 1000 );
+			}
+			catch( Exception e )
+			{}
+			
 			for (Person p : allPersons) {
 				response.getWriter().println(p.toString());
 			}
@@ -44,7 +52,14 @@ public class Persons extends HttpServlet {
 				long id = Long.parseLong(idAsString);
 				Person p = PersonContainer.getInstance().load(id);
 
-				response.getWriter().println(p.toString());
+				if( p != null )
+				{
+					response.getWriter().println(p.toString());
+				}
+				else
+				{
+					response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+				}
 			} catch (Exception e) {
 				// ignore
 			}
