@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.ws.http.HTTPBinding;
 
+import com.owlike.genson.Genson;
+
 /**
  * Servlet implementation class PersonContainer
  */
@@ -43,6 +45,18 @@ public class Persons extends HttpServlet {
 			}
 			catch( Exception e )
 			{}
+			
+			
+			Genson genson = new Genson();
+			
+			try
+			{
+				System.out.println(genson.serialize(allPersons));
+			}
+			catch( Exception e )
+			{
+				e.printStackTrace();
+			}
 			
 			for (Person p : allPersons) {
 				response.getWriter().println(p.toString());
