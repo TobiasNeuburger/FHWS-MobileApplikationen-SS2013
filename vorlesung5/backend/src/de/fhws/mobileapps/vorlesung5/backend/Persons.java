@@ -39,13 +39,6 @@ public class Persons extends HttpServlet {
 			Collection<Person> allPersons = PersonContainer.getInstance()
 					.values();
 			
-			try
-			{
-				Thread.sleep( 1000 );
-			}
-			catch( Exception e )
-			{}
-			
 			
 			for (Person p : allPersons) {
 				response.getWriter().println(p.toString());

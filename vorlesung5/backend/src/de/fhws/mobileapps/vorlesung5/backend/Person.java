@@ -7,12 +7,15 @@ public class Person {
 	private String firstName;
 	
 	private String lastName;
+	
+	private String url;
 
 	
 	public Person(String firstName, String lastName) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.url = "http://lorempixel.com/300/300/people/";
 	}
 
 	public long getId() {
@@ -41,7 +44,7 @@ public class Person {
 	
 	public String toString()
 	{
-		return Long.toString(this.id) + ";" + this.firstName + ";" + this.lastName;
+		return Long.toString(this.id) + ";" + this.firstName + ";" + this.lastName + ";" + this.url;
 	}
 	
 
