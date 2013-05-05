@@ -6,6 +6,8 @@ import java.net.URL;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.view.Menu;
 import android.view.View;
@@ -35,8 +37,8 @@ public class MainActivity extends Activity {
 
 		@Override
 		public void onClick(View v) {
-			new LoadFromNetwork().execute("http://backend.applab.fhws.de/images/skyfall.jpg");
-//			new LoadFromNetwork().execute("http://lorempixel.com/300/300/people/");
+//			new LoadFromNetwork().execute("http://backend.applab.fhws.de/images/skyfall.jpg");
+			new LoadFromNetwork().execute("http://lorempixel.com/600/600/people/");
 		}
 		
 	}
@@ -51,8 +53,10 @@ public class MainActivity extends Activity {
 			{
 				URL url = new URL( from[0] );
 				InputStream is = (InputStream)url.getContent();
-				
-				return Drawable.createFromStream(is , "src");
+				BitmapDrawable bd = (BitmapDrawable)BitmapDrawable.createFromStream(is, "src");
+				Bitmap bm = bd.getBitmap();
+				Bitmap b = Bitmap.createScaledBitmap(bm, 500, 500, false);
+				return new BitmapDrawable(getResources(), b);
 			}
 			catch( Exception e )
 			{
