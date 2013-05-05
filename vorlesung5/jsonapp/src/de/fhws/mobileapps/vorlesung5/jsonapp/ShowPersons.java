@@ -65,7 +65,7 @@ public class ShowPersons extends ListActivity {
 				HttpResponse response = client.execute(get);
 				String reply = IOUtils.toString(response.getEntity().getContent());
 				Collection<Person> cp = genson.deserialize(reply, new GenericType<List<Person>>(){} );
-				
+
 				for( Person p : cp )
 				{
 					adapter.addData(p);
