@@ -36,6 +36,7 @@ public class MainActivity extends Activity {
 		@Override
 		public void onClick(View v) {
 			new LoadFromNetwork().execute("http://backend.applab.fhws.de/images/skyfall.jpg");
+//			new LoadFromNetwork().execute("http://lorempixel.com/300/300/people/");
 		}
 		
 	}
